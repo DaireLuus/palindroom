@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Palindroom</title>
+        
+    </head>
+<body>
+
+<h1> Leiame, kas sisestatud sõna on palindroom või mitte</h1>
+<p>Palun sisesta sõna <input type="text" size="50" id="str" ></p>
+     <button onclick="pali()"> Vajuta nuppu </button> 
+<p id="tulem"></p>
+<script>
+    
+    function pali(){
+      var sona = document.getElementById("str").value;
+      sona = sona.toLowerCase();
+      sona = sona.replace(/[^abcdefghijklmnopqrsšzžtuvõäöüxy]/g, "");
+      if (sona == ""){
+        document.getElementById("tulem").innerHTML = "Palun sisesta midagi!";
+      }
+      else{
+
+       var uussona = sona.split("").reverse().join("");
+       if (sona == uussona){
+         document.getElementById("tulem").innerHTML = "On palindroom";
+
+       }
+       else {
+         document.getElementById("tulem").innerHTML = "Ei ole palindroom";
+       }
+      }
+      
+
+    }
+      
+</script>
+
+</body>
+</html>
